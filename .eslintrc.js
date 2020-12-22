@@ -5,6 +5,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:node/recommended',
+    'plugin:jest/recommended',
     'plugin:@typescript-eslint/recommended',
   ],
   ignorePatterns: ['dist/**/*.js'],
@@ -13,7 +14,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'node', 'mocha', 'prettier'],
+  plugins: ['@typescript-eslint', 'node', 'jest', 'prettier'],
   rules: {
     'node/no-missing-import': 'off',
     'node/no-unsupported-features': 'off',
