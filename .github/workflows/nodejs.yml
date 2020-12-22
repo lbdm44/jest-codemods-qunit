@@ -5,11 +5,11 @@ on:
   push:
     # filtering branches here, prevents duplicate builds from pull_request and push
     branches:
-      - master
+      - main
 
   # early issue detection, run CI weekly on Sundays
   schedule:
-  - cron:  '0 6 * * 0'
+    - cron: '0 6 * * 0'
 
 jobs:
   test:
@@ -21,18 +21,18 @@ jobs:
         node_version: ['12', '14']
 
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
 
-    - name: Use Node.js ${{ matrix.node_version }}
-      uses: actions/setup-node@v1
-      with:
-        version: ${{ matrix.node_version }}
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          version: ${{ matrix.node_version }}
 
-    - name: install dependencies
-      run: npm install
+      - name: install dependencies
+        run: npm install
 
-    - name: lint
-      run: npm run lint
+      - name: lint
+        run: npm run lint
 
-    - name: test
-      run: npm run test
+      - name: test
+        run: npm run test
