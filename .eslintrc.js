@@ -8,7 +8,7 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:@typescript-eslint/recommended',
   ],
-  ignorePatterns: ['dist/**/*.js'],
+  ignorePatterns: ['dist/**/*.js', 'src/transformers/__testfixtures__/**/*.js'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
